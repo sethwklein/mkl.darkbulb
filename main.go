@@ -32,7 +32,8 @@ func mainError() (err error) {
 
 	// QoS 1 is supposed to ensure the instruction is received at least once.
 	// No idea what retained (the bool) does and the docs don't help.
-	token = client.Publish("mkl.lytebulb", 1, false, "{}")
+	token = client.Publish("mkl.lytebulb", 1, false,
+		`{L1:0,L2:0,L3:0,L4:0,L5:0,L6:0}`)
 	qq = token.Wait()
 	if !qq {
 		return errors.New(`wait returned false after publish ¯\_(ツ)_/¯`)
