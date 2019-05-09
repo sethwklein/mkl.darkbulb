@@ -15,7 +15,7 @@ func mainError() (err error) {
 	// If you're new to Go, know that this MQTT package is a great example
 	// of how not to design a library in Go.
 
-	options := mqtt.NewClientOptions().AddBroker("tcp://75.69.78.171:1883")
+	options := mqtt.NewClientOptions().AddBroker("tcp://hackbot-mqtt.local:1883")
 	client := mqtt.NewClient(options)
 
 	token := client.Connect()
